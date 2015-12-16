@@ -1,14 +1,14 @@
 i = 0
-floor = 0
+level = 0
 
 while i == 0:
-    print "You are on floor " + str(floor) + ". Type ( to go up or ) to go down. Type done to finish."
+    print "You are on floor " + str(level) + "."
     chooseFloor = raw_input()
-    if chooseFloor == '(':
-        floor += 1
-    elif chooseFloor == ')':
-        floor -= 1
-    elif chooseFloor == 'done' or chooseFloor == 'Done':
+    if chooseFloor == 'Done' or 'done':
         i += 1
     else:
-        print "That is invalid syntax"
+        for character in chooseFloor:
+            if character == '(':
+                level += 1
+            elif character == ")":
+                level -= 1
